@@ -11,10 +11,11 @@ routes.get('/', (req, res ) => {
 routes.post('/saque', async (request, response ) => {
     try {
         const notas = await saqueController.fazSaque(request.body);
-
-        return response.send( notas );
-    } catch (error) {
-        
+        console.log(notas);
+        return response.status(200).send( notas );
+    } 
+    catch (error) {
+        return response.status(404).send( error );
     }
 });
 
@@ -25,7 +26,7 @@ routes.post('/cadastro', async (request, response ) => {
         name,
     });
 
-    return response.send();
+    return response.status(200).send();
 });
 
 
