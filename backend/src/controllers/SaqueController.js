@@ -1,7 +1,4 @@
-// const { request, response } = require('express');
-const db = require('../database/connections');
 const Caixa = require('../models/CaixaEletronicoModel');
-
 const caixa = new Caixa();
 
 module.exports = class SaqueController 
