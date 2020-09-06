@@ -23,5 +23,19 @@ module.exports = class SaqueController
         }        
     }
 
+    async cadastraNota(body)
+    {
+        const { nota } = body;
+
+        if(nota) {
+            var cadastraNota = await caixa.cadastraNota(nota);
+            cadastraNota = [{ cadastraNota }];
+        } else {
+            var cadastraNota = [{mensagem: "Algo de errado aconteceu.", }];
+        }
+
+        return cadastraNota;
+    }
+
 }
 

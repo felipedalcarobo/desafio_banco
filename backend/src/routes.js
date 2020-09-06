@@ -34,13 +34,13 @@ routes.post('/user', async (req, res ) => {
 });
 
 routes.post('/saque', authMiddleware, async (request, response ) => {
-    try {
+    // try {
         const notas = await saqueController.fazSaque(request.body);
         return response.status(200).send( notas );
-    } 
-    catch (error) {
-        return response.status(404).send( error );
-    }
+    // } 
+    // catch (error) {
+    //     return response.status(404).send( error );
+    // }
 });
 
 routes.post('/cadastro', async (request, response ) => {
@@ -57,6 +57,16 @@ routes.post('/login', async (request, response ) => {
     try {
         const login = await auth.login(request.body);
         return response.status(200).send( login );
+    } 
+    catch (error) {
+        return response.status(404).send( error );
+    }
+});
+
+routes.post('/cadastro-nota', async (request, response ) => {
+    try {
+        const notas = await saqueController.cadastraNota(request.body);
+        return response.status(200).send( notas );
     } 
     catch (error) {
         return response.status(404).send( error );
