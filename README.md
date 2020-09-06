@@ -1,6 +1,8 @@
 ## desafio caixa eletronico
 - http://dojopuzzles.com/problemas/exibe/caixa-eletronico/
 
+- DESENVOLVIDO COM NODE.JS
+
 - Para resolver o problema ordenei as notas disponiveis no banco de dados, sendo da maior para a menor. Caso o valor solicitado seja o mesmo valor de uma das notas o sistema já retorna ela mesma, caso contrário entra num foreach das notas disponiveis. Dentro criei um while para que seja verificado se o valor solicitado é menor do que a nota, se for adiciono a nota num array, e rodará novamente o while caso o valor restante seja ainda menor do que a nota atual, caso contrário irá para a próxima e menor nota disponível.
 
 ### Ambiente de Desenvolvimento
